@@ -6,6 +6,7 @@ import android.view.*;
 import android.text.format.Time;
 import java.text.*;
 import android.util.*;
+
 import java.util.*;
 import java.io.*;
 import android.app.Activity;
@@ -14,12 +15,11 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.Button;
 
-
-
 public class MainActivity extends Activity {
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
-	private static final String TAG = "MyActivity";
+	private static final String myCamera = "Camera";
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,24 +44,25 @@ public class MainActivity extends Activity {
 	}
 	
 	public void captureImage(View v){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Log.v("my camera", "a new image can be captured from this function");
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		File imagesFolder = new File(Environment.getExternalStorageDirectory(), "MyImages1");
         imagesFolder.mkdirs(); 
         File image = new File(imagesFolder, "IMAGE_001.JPG");
         Uri uriSavedVideo = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedVideo);// set the image file name
-//		intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video image quality to high
         startActivityForResult(intent,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
 	
 	public void captureVideo(View v){
-		  Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+		Log.v("my camera", "a new video can be captured from this function");
+		Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 	        File videosFolder = new File(Environment.getExternalStorageDirectory(), "MyVideos1");
 	       videosFolder.mkdirs(); 
 	        File video = new File(videosFolder, "video_001.mp4");
 	        Uri uriSavedVideo = Uri.fromFile(video);
 	        intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedVideo);// set the video file name
-	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video image quality to high
+	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
 	
 	}
