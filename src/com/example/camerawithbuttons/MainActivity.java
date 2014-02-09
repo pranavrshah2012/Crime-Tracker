@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
 	private static final String myCamera = "Camera";
 	
 	
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,12 +31,30 @@ public class MainActivity extends Activity {
 
 	protected void onResume(){
 		super.onResume();
+		Log.v("Function", "in onResume()");
 	}
 	
+	protected void onStart(){
+		super.onStart();
+		Log.v("Function", "in onStart()");
+		  
+		}
 	
 	protected void onPause(){
-	  super.onPause();
-	}
+		super.onPause();
+		Log.v("Function", "in onPause()");
+	  	}
+	
+	protected void onStop(){
+		  super.onStop();
+		  Log.v("Function", "in onStop()");
+		}
+		
+	protected void onDestroy(){
+		  super.onDestroy();
+		  Log.v("Function", "in onDestroy()");
+		}
+		
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,8 +83,7 @@ public class MainActivity extends Activity {
 	        Uri uriSavedVideo = Uri.fromFile(video);
 	        intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedVideo);// set the video file name
 	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
-	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);
-	
+	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
 
 }
