@@ -2,7 +2,6 @@ package com.example.camerawithbuttons;
 
 import android.os.*;
 import android.view.*;
-//import android.media.MediaPlayer;
 import android.text.format.Time;
 import java.text.*;
 import android.util.*;
@@ -19,10 +18,11 @@ public class MainActivity extends Activity {
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
 	private static final String myCamera = "Camera";
-	
-	
-	
-	
+	private static final String DateTag = "Date Activity";
+	String date, time ="";
+	Calendar rightNow;
+	Date d;
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,6 +32,22 @@ public class MainActivity extends Activity {
 	protected void onResume(){
 		super.onResume();
 		Log.v("Function", "in onResume()");
+		
+		rightNow = Calendar.getInstance();		
+		d = rightNow.getTime(); //only used for checking
+		Time now = new Time();
+		now.setToNow();		
+//w		Log.v(DateTag, "now from time = "+now); //checking only
+		
+		//full time with date month year, time min seconds..
+		DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss");
+		date = df.format(Calendar.getInstance().getTime());
+		Log.v("datetag", " date please ="+date);
+		DateFormat tf = new SimpleDateFormat("hh:mm:ss");
+		time = tf.format(Calendar.getInstance().getTime()); 
+		Log.v("datetag", "time please =" +time);
+//		Log.v(DateTag, "rightnow=" +d);
+
 	}
 	
 	protected void onStart(){
