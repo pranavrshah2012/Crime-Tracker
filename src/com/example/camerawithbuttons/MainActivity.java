@@ -9,24 +9,59 @@ import android.util.*;
 import java.util.*;
 import java.io.*;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.widget.TextView;
+import android.util.Log;
+import android.widget.Toast;
+
+public class MainActivity extends Activity implements LocationListener {
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
 	private static final String myCamera = "Camera";
+	
 	private static final String DateTag = "Date Activity";
 	String date, time ="";
 	Calendar rightNow;
 	Date d;
+	
+	private LocationManager locationManager;
+	private String provider;
+	Criteria criteria;
+	Location location;
+
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+       // Get the location manager
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        // Define the criteria how to select the locatioin provider -> use
+        // default
+        Criteria criteria = new Criteria();
+        provider = locationManager.getBestProvider(criteria, false);
+        Location location = locationManager.getLastKnownLocation(provider);
+
+        // Initialize the location fields
+        if (location != null) {
+          Log.v("location alert", "Provider " + provider + " has been selected.");
+          onLocationChanged(location);
+        } else {
+          Log.v("Location alert","Location not available");          
+        }
+        //end of location code
+
 	}
 
 	protected void onResume(){
@@ -46,20 +81,17 @@ public class MainActivity extends Activity {
 		DateFormat tf = new SimpleDateFormat("hh:mm:ss");
 		time = tf.format(Calendar.getInstance().getTime()); 
 		Log.v("datetag", "time please =" +time);
-//		Log.v(DateTag, "rightnow=" +d);
+		Log.v(DateTag, "rightnow=" +d);
+		
+//		locationManager.requestLocationUpdates(provider, 400, 1, this);
 
 	}
-	
+
 	protected void onStart(){
 		super.onStart();
 		Log.v("Function", "in onStart()");
 		  
 		}
-	
-	protected void onPause(){
-		super.onPause();
-		Log.v("Function", "in onPause()");
-	  	}
 	
 	protected void onStop(){
 		  super.onStop();
@@ -71,6 +103,39 @@ public class MainActivity extends Activity {
 		  Log.v("Function", "in onDestroy()");
 		}
 		
+    
+    protected void onPause(){
+    	super.onPause();
+    	Log.v("Function", "in onPause()");
+        locationManager.removeUpdates(this);
+        
+    }
+    
+    public void onLocationChanged(Location location) {
+        double lat = location.getLatitude();
+        double lng = location.getLongitude();
+       Log.v("Location alert", " "+lat);
+       Log.v("Location alert", " "+lng);
+      }
+    
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+        // TODO Auto-generated method stub
+
+      }
+
+      @Override
+      public void onProviderEnabled(String provider) {
+        Toast.makeText(this, "Enabled new provider " + provider,
+            Toast.LENGTH_SHORT).show();
+
+      }
+
+      @Override
+      public void onProviderDisabled(String provider) {
+        Toast.makeText(this, "Disabled provider " + provider,
+            Toast.LENGTH_SHORT).show();
+      }
+
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
