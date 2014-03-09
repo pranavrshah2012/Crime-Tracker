@@ -63,7 +63,7 @@ public class MainActivity extends Activity implements LocationListener {
         //end of location code
 
 	}
-
+	
 	protected void onResume(){
 		super.onResume();
 		Log.v("Function", "in onResume()");
