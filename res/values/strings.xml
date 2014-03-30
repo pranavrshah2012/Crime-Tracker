@@ -4,5 +4,10 @@
     <string name="app_name">Camera with Buttons</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="Next">Next</string>
+    <string name="CaptureImage">Click Image</string>
+    
+    <string name="CaptureVideo">Take Video</string>
+        
 
 </resources>

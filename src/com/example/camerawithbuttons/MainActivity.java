@@ -1,27 +1,28 @@
 package com.example.camerawithbuttons;
 
-import android.os.*;
-import android.view.*;
-import android.text.format.Time;
-import java.text.*;
-import android.util.*;
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-import java.util.*;
-import java.io.*;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.provider.MediaStore;
-import android.widget.Button;
-
-import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.widget.TextView;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.text.format.Time;
 import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements LocationListener {
@@ -62,8 +63,19 @@ public class MainActivity extends Activity implements LocationListener {
         }
         //end of location code
 
+        Button nextButton = (Button) findViewById(R.id.next);
+        nextButton.setOnClickListener(new OnClickListener() {            
+             public void onClick(View v) {
+             startActivity(new Intent(getApplicationContext(), Upload.class));
+             }
+ 	     });
+        
 	}
 	
+	
+	
+	
+
 	protected void onResume(){
 		super.onResume();
 		Log.v("Function", "in onResume()");
@@ -149,7 +161,7 @@ public class MainActivity extends Activity implements LocationListener {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		File imagesFolder = new File(Environment.getExternalStorageDirectory(), "MyImages1");
         imagesFolder.mkdirs(); 
-        File image = new File(imagesFolder, "IMAGE_001.JPG");
+        File image = new File(imagesFolder, "p"+d+".JPG");
         Uri uriSavedVideo = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedVideo);// set the image file name
         startActivityForResult(intent,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
@@ -160,11 +172,13 @@ public class MainActivity extends Activity implements LocationListener {
 		Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 	        File videosFolder = new File(Environment.getExternalStorageDirectory(), "MyVideos1");
 	       videosFolder.mkdirs(); 
-	        File video = new File(videosFolder, "video_001.mp4");
+	        File video = new File(videosFolder, "p"+d+".mp4");
 	        Uri uriSavedVideo = Uri.fromFile(video);
 	        intent.putExtra(MediaStore.EXTRA_OUTPUT, uriSavedVideo);// set the video file name
 	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
+	
+	
 
 }

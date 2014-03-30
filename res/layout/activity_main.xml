@@ -15,22 +15,31 @@
         android:text="@string/hello_world" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="17dp"
         android:onClick="captureImage"
-        android:text="image" />
+        android:text="@string/CaptureImage" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
+        android:layout_below="@+id/image"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="@string/Next" />
+
+    <Button
+        android:id="@+id/video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/next"
+        android:layout_toRightOf="@+id/next"
         android:onClick="captureVideo"
-        android:text="video" />
+        android:text="@string/CaptureVideo" />
 
 </RelativeLayout>
