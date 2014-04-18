@@ -30,6 +30,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
 
 
@@ -38,6 +39,7 @@ private GoogleMap googleMap;
 public  double lat = 0.0;
 public  double lng = 0.0;
 
+MarkerOptions marker;
 private LocationManager locationManager;
 private String provider;
 Criteria criteria;
@@ -132,15 +134,25 @@ public void onStatusChanged(String provider, int status, Bundle extras) {
                       .show();
           }
       }
+      //disable rotation of map
+      googleMap.getUiSettings().setRotateGesturesEnabled(false);
   }
 
   @Override
   protected void onResume() {
       super.onResume();
       initilizeMap();
+      reportLocation();
+      
   }
 
+  public void reportLocation (){
+//create marker
+ marker = new MarkerOptions().position(new LatLng(lat, lng)).title("Hello Maps ");
 
+//adding marker
+googleMap.addMarker(marker);
+  }
 
 
 //@Override
