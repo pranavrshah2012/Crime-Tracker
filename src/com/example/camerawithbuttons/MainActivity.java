@@ -70,6 +70,14 @@ public class MainActivity extends Activity implements LocationListener {
              }
  	     });
         
+        Button mapButton = (Button) findViewById(R.id.Maps);
+        mapButton.setOnClickListener(new OnClickListener() {            
+             public void onClick(View v) {
+             startActivity(new Intent(getApplicationContext(), MapPage.class));
+             }
+ 	     });
+        
+        
 	}
 	
 	
@@ -178,6 +186,8 @@ public class MainActivity extends Activity implements LocationListener {
 	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
+
+	
 	
 	
 
