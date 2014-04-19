@@ -63,6 +63,7 @@ public class MainActivity extends Activity implements LocationListener {
         }
         //end of location code
 
+        
         Button nextButton = (Button) findViewById(R.id.upload);
         nextButton.setOnClickListener(new OnClickListener() {            
              public void onClick(View v) {
