@@ -186,5 +186,6 @@ public class MainActivity extends Activity implements LocationListener {
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
 	
+	
 
 }
