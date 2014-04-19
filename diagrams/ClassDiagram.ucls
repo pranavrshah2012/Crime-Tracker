@@ -1,37 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.5" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
   associations="true" dependencies="true" nesting-relationships="true">  
-  <class id="1" language="java" name="com.example.camerawithbuttons.Upload" project="CameraWithButtons" 
-    file="/CameraWithButtons/src/com/example/camerawithbuttons/Upload.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="154" y="560"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
-      visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <component id="2" language="java" name="src" project="CameraWithButtons" file="/CameraWithButtons/src" binary="false" 
+  <component id="1" language="java" name="src" project="CameraWithButtons" file="/CameraWithButtons/src" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="78" y="33"/>    
     <display autosize="true" stereotype="true" accessors="true"/>  
   </component>  
-  <package id="3" language="java" name="com.example.camerawithbuttons" project="CameraWithButtons" 
+  <package id="2" language="java" name="com.example.camerawithbuttons" project="CameraWithButtons" 
     file="/CameraWithButtons/src/com/example/camerawithbuttons" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="130" y="103"/>    
     <display autosize="true" stereotype="true" accessors="true"/>  
   </package>  
-  <class id="4" language="java" name="com.example.camerawithbuttons.MainActivity" project="CameraWithButtons" 
+  <class id="3" language="java" name="com.example.camerawithbuttons.MainActivity" project="CameraWithButtons" 
     file="/CameraWithButtons/src/com/example/camerawithbuttons/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="485" y="274"/>    
+    <position height="531" width="298" x="359" y="-51"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="5">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
+  <class id="4" language="java" name="com.example.camerawithbuttons.MainActivityTest" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/MainActivityTest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="240" x="697" y="-51"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.example.camerawithbuttons.uploadExample" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/uploadExample.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="271" x="359" y="1001"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.example.camerawithbuttons.DropBox" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/DropBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="441" width="247" x="359" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.example.camerawithbuttons.Upload" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/Upload.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="189" x="646" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="8">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     accessors="true" visibility="true">    
