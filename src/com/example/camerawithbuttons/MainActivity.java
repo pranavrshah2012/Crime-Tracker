@@ -29,8 +29,7 @@ public class MainActivity extends Activity implements LocationListener {
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 200;
 	private static final int CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE = 200;
 	private static final String myCamera = "Camera";
-	public  double lat = 0.0;
-	public  double lng = 0.0;
+	
 	private static final String DateTag = "Date Activity";
 	String date, time ="";
 	Calendar rightNow;
@@ -72,7 +71,6 @@ public class MainActivity extends Activity implements LocationListener {
              }
  	     });
         
-<<<<<<< HEAD
         Button dropboxButton = (Button) findViewById(R.id.dropboxButton);
         dropboxButton.setOnClickListener(new OnClickListener() {            
              public void onClick(View v) {
@@ -80,16 +78,6 @@ public class MainActivity extends Activity implements LocationListener {
              }
  	     });
         
-=======
-        Button mapButton = (Button) findViewById(R.id.Maps);
-        mapButton.setOnClickListener(new OnClickListener() {            
-             public void onClick(View v) {
-             startActivity(new Intent(getApplicationContext(), MapPage.class));
-             }
- 	     });
-        
-        
->>>>>>> map
 	}
 	
 	
@@ -144,8 +132,8 @@ public class MainActivity extends Activity implements LocationListener {
     }
     
     public void onLocationChanged(Location location) {
-       lat = location.getLatitude();
-       lng = location.getLongitude();
+        double lat = location.getLatitude();
+        double lng = location.getLongitude();
        Log.v("Location alert", " "+lat);
        Log.v("Location alert", " "+lng);
       }
@@ -198,8 +186,6 @@ public class MainActivity extends Activity implements LocationListener {
 	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
-
-	
 	
 	
 
