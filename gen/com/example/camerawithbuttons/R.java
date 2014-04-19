@@ -24,19 +24,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090008;
-        public static final int gallery1=0x7f090007;
+        public static final int action_settings=0x7f09000b;
+        public static final int container_files=0x7f090007;
+        public static final int dropboxButton=0x7f090003;
+        public static final int dropbox_login=0x7f090005;
+        public static final int gallery1=0x7f09000a;
         public static final int image=0x7f090001;
-        public static final int imgView=0x7f090005;
-        public static final int next=0x7f090004;
+        public static final int imgView=0x7f090008;
         public static final int textView1=0x7f090000;
-        public static final int upload=0x7f090002;
-        public static final int video=0x7f090003;
-        public static final int videoView1=0x7f090006;
+        public static final int upload=0x7f090004;
+        public static final int upload_file=0x7f090006;
+        public static final int video=0x7f090002;
+        public static final int videoView1=0x7f090009;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int second_layout=0x7f030001;
+        public static final int dropbox=0x7f030001;
+        public static final int second_layout=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;

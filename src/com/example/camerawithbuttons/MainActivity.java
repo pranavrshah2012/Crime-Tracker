@@ -70,6 +70,13 @@ public class MainActivity extends Activity implements LocationListener {
              }
  	     });
         
+        Button dropboxButton = (Button) findViewById(R.id.dropboxButton);
+        dropboxButton.setOnClickListener(new OnClickListener() {            
+             public void onClick(View v) {
+             startActivity(new Intent(getApplicationContext(), DropBox.class));
+             }
+ 	     });
+        
 	}
 	
 	
@@ -178,7 +185,6 @@ public class MainActivity extends Activity implements LocationListener {
 	        intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1); // set the video quality to high
 	        startActivityForResult(intent,CAPTURE_VIDEO_ACTIVITY_REQUEST_CODE);	
 	}
-	
 	
 
 }

@@ -18,27 +18,35 @@
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/video"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="17dp"
         android:onClick="captureImage"
         android:text="@string/CaptureImage" />
+
+    <Button
+        android:id="@+id/dropboxButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/upload"
+        android:layout_below="@+id/upload"
+        android:layout_marginTop="55dp"
+        android:text="Dropbox" />
 
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_centerVertical="true"
         android:text="@string/Upload" />
 
     <Button
         android:id="@+id/video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/next"
-        android:layout_toRightOf="@+id/next"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
         android:onClick="captureVideo"
         android:text="@string/CaptureVideo" />
 
