@@ -8,6 +8,8 @@
     <string name="CaptureImage">Click Image</string>
     
     <string name="CaptureVideo">Take Video</string>
+    <string name="Maps">Maps</string>
+    
         
 
 </resources>
