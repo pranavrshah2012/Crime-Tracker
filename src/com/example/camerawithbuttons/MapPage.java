@@ -44,7 +44,7 @@ private LocationManager locationManager;
 private String provider;
 Criteria criteria;
 Location location;
-LatLng coordinates;z
+LatLng coordinates;
 CameraPosition cameraPosition;
 
 @Override

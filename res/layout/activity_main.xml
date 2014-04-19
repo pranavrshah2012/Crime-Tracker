@@ -50,4 +50,13 @@
         android:onClick="captureVideo"
         android:text="@string/CaptureVideo" />
 
+    <Button
+        android:id="@+id/Maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/upload"
+        android:layout_marginBottom="24dp"
+        android:text="Maps" />
+
 </RelativeLayout>
