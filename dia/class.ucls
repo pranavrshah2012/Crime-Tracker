@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.5" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true">  
+  <component id="1" language="java" name="src" project="CameraWithButtons" file="/CameraWithButtons/src" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="119" y="38"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </component>  
+  <package id="2" language="java" name="com.example.camerawithbuttons" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="159" y="111"/>    
+    <display autosize="true" stereotype="true" accessors="true"/>  
+  </package>  
+  <class id="3" language="java" name="com.example.camerawithbuttons.MainActivity" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/MainActivity.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="708" width="490" x="310" y="-200"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.example.camerawithbuttons.uploadExample" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/uploadExample.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="396" width="467" x="87" y="1176"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.example.camerawithbuttons.DropBox" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/DropBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="588" width="406" x="87" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.example.camerawithbuttons.Upload" project="CameraWithButtons" 
+    file="/CameraWithButtons/src/com/example/camerawithbuttons/Upload.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="180" width="307" x="533" y="548"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="7">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="8">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
